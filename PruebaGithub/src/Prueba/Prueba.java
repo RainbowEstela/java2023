@@ -22,6 +22,8 @@ public class Prueba {
 		System.out.println(decimal);
 		System.out.println(precio);
 		System.out.println(ganasDeIrme);
+		
+		//prueba de push desde ordenador de casa
 	
 		
 	}

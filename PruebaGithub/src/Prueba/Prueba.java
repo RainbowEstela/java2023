@@ -14,6 +14,7 @@ public class Prueba {
 		
 		boolean ganasDeIrme = true;
 		
+		//pintar varialbes
 		System.out.println(num1);
 		System.out.println(mes);
 		System.out.println(distancia);

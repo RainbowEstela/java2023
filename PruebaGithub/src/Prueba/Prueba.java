@@ -29,6 +29,8 @@ public class Prueba {
 		
 		//prueba push 2
 		
+		//prueba push desde la clase
+		
 	}
 
 }

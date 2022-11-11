@@ -24,6 +24,8 @@ public class Prueba {
 		System.out.println(ganasDeIrme);
 		
 		//prueba de push desde ordenador de casa
+
+		//prueba de pull desde casa
 		
 	
 		

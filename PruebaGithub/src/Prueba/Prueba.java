@@ -12,6 +12,9 @@ public class Prueba {
 		float decimal = 1e10f;
 		double precio = 35000.95;
 		
+		//constantes en mayuscula
+		final double PLUS = 1.15;
+		
 		boolean ganasDeIrme = true;
 		
 		//pintar variables
@@ -22,6 +25,7 @@ public class Prueba {
 		System.out.println(decimal);
 		System.out.println(precio);
 		System.out.println(ganasDeIrme);
+		System.out.println(PLUS);
 		
 		//prueba de push desde ordenador de casa
 

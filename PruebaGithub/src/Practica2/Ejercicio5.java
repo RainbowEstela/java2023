@@ -19,15 +19,15 @@ public class Ejercicio5 {
 		//System.out.println(PI);
 		
 		/**
-		 * no funciona porque PI es una palabra reservada, no se puede crear una variable con ese nombre
+		 * no funciona porque PI no es entero
 		 */
 		
 		//c
-		//double PI = 3.14;
-		//System.out.println(PI);
+		double PI = 3.14;
+		System.out.println(PI);
 		
 		/**
-		 * no funciona por la misma razon por la que no funcionó el anterior apartado
+		 * funciona porque PI no es palabra reservada PI esta dentro de Math.PI
 		 */
 		
 		//d

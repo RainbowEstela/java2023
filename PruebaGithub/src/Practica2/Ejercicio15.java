@@ -14,7 +14,6 @@ public class Ejercicio15 {
 		generado = generado / 2;
 		
 		System.out.println("me corresponden " + generado + " euros");
-
 	}
 
 }

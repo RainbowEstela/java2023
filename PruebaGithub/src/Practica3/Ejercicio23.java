@@ -1,6 +1,6 @@
-package Prueba;
+package Practica3;
 
-public class Strings1 {
+public class Ejercicio23 {
 
 	public static void main(String[] args) {
 		

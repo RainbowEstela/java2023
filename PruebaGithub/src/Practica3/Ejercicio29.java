@@ -1,5 +1,7 @@
 package Practica3;
 
+import java.util.Scanner;
+
 public class Ejercicio29 {
 	/*
 	 * comprueba si el año es bisiesto
@@ -101,9 +103,34 @@ public class Ejercicio29 {
 
 	public static void main(String[] args) {
 		int dia = 0, mes = 0, year = 0;
+		Scanner sc = new Scanner(System.in);
 		
+		try {
+			System.out.print("Dia:");
+			dia = Integer.parseInt(sc.nextLine());
+		} catch (Exception e) {
+			System.out.println("Error caracter no válido");
+		} 
 		
-		System.out.println(esFechaValida(29,2,2024));
+		try {
+			System.out.print("mes:");
+			mes = Integer.parseInt(sc.nextLine());
+		} catch (Exception e) {
+			System.out.println("Error caracter no válido");
+		} 
+		
+		try {
+			System.out.print("año:");
+			year = Integer.parseInt(sc.nextLine());
+		} catch (Exception e) {
+			System.out.println("Error caracter no válido");
+		} 
+		
+		if (esFechaValida(dia,mes,year) == true) {
+			System.out.println("Fecha válida");
+		} else {
+			System.out.println("Fecha no válida");
+		}
 	}
 
 }

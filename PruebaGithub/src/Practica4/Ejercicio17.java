@@ -1,6 +1,8 @@
 package Practica4;
 
-public class Ejercicio23 {
+import java.util.Arrays;
+
+public class Ejercicio17 {
 	public static void rellenaArrays(int array[][]) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[0].length; j++) {
@@ -29,16 +31,21 @@ public class Ejercicio23 {
 		
 		return traspuesta;
 	}
-	
 	public static void main(String[] args) {
-		int matriz[][] = new int[5][3];
-		int trasp[][] = new int[3][5];
-		System.out.println("matriz A");
+		int matriz[][] = new int[5][5];
 		rellenaArrays(matriz);
 		mostrarTablero(matriz);
-		System.out.println("matriz traspuesta de A");
-		trasp = definirTraspuesta(matriz);
-		mostrarTablero(trasp);
+		
+		matriz = definirTraspuesta(matriz);
+		
+		for(int i = 0; i < matriz.length; i++) {
+			Arrays.sort(matriz[i]);
+		}
+		
+		System.out.println("-----------------");
+		matriz = definirTraspuesta(matriz);
+		mostrarTablero(matriz);
+
 	}
 
 }

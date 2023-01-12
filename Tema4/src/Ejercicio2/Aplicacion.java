@@ -13,6 +13,7 @@ public class Aplicacion {
 			ene2.subirNivel();
 		}
 		
+		System.out.println(Enemigo.numEnemigos);
 		System.out.println(ene1.toString());
 		System.out.println(ene2.toString());
 		
@@ -21,6 +22,7 @@ public class Aplicacion {
 
 		System.out.println(ene1.toString());
 		System.out.println(ene2.toString());
+		System.out.println(Enemigo.numEnemigos);
 	}
 
 }

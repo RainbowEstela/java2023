@@ -14,6 +14,8 @@ public class Enemigo {
 	private double nivel;
 	private double damage;
 	
+	public static int numEnemigos = 0;
+	
 	/**
 	 * @param nombre
 	 * @param tipo
@@ -29,6 +31,7 @@ public class Enemigo {
 		this.salud = 100;
 		this.nivel = 1;
 		this.damage = damage;
+		Enemigo.numEnemigos++;
 	}
 
 	/**
@@ -45,6 +48,7 @@ public class Enemigo {
 		this.salud = 100;
 		this.nivel = 1;
 		this.damage = 5;
+		Enemigo.numEnemigos++;
 	}
 
 
@@ -135,6 +139,7 @@ public class Enemigo {
 		this.salud -= damage;
 		if (this.salud <= 0) {
 			System.out.println("enemigo derrotado");
+			Enemigo.numEnemigos--;
 		}
 	}
 

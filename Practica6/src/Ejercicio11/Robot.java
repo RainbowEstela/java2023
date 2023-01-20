@@ -18,8 +18,10 @@ public class Robot {
 	private int numeroPasos;
 	
 	private static int contadorRobots;
-	private final static int filasTablero = 100;
-	private final static int columnasTablero = 100;
+	private final static int filasTablero = 25;
+	private final static int columnasTablero = 25;
+	public static int destinoX;
+	public static int destinoY;
 	/**
 	 * metodo que decide el movimiento del robot e intenta moverlo
 	 */
@@ -45,6 +47,14 @@ public class Robot {
 			}
 
 		}
+		
+		verificarLlegada();
+	}
+	
+	private void verificarLlegada() {
+		if ((this.posicionX == destinoX) && (this.posiciony == destinoY) ) {
+			this.haLlegado = true;
+		}
 	}
 	
 	/**
@@ -65,7 +75,7 @@ public class Robot {
 	public void irAbajo() {
 		int posX = this.posicionX + 1;
 		
-		if (posX <= 100) {
+		if (posX <= filasTablero) {
 			this.posicionX = posX;
 			this.numeroPasos++;
 		}
@@ -89,7 +99,7 @@ public class Robot {
 	public void irIzquierda() {
 		int posY = this.posiciony + 1;
 		
-		if (posY <= 100) {
+		if (posY <= filasTablero) {
 			this.posiciony = posY;
 			this.numeroPasos++;
 		}
@@ -156,6 +166,68 @@ public class Robot {
 	 */
 	public static int getContadorRobots() {
 		return contadorRobots;
+	}
+	
+	
+
+	/**
+	 * @return the imagen
+	 */
+	public char getImagen() {
+		return imagen;
+	}
+
+	/**
+	 * @return the posicionX
+	 */
+	public int getPosicionX() {
+		return posicionX;
+	}
+
+	/**
+	 * @return the posiciony
+	 */
+	public int getPosiciony() {
+		return posiciony;
+	}
+
+	
+	
+	/**
+	 * @return the destinoX
+	 */
+	public static int getDestinoX() {
+		return destinoX;
+	}
+
+	/**
+	 * @param destinoX the destinoX to set
+	 */
+	public static void setDestinoX(int destinoX) {
+		Robot.destinoX = destinoX;
+	}
+
+	/**
+	 * @return the destinoY
+	 */
+	public static int getDestinoY() {
+		return destinoY;
+	}
+
+	/**
+	 * @param destinoY the destinoY to set
+	 */
+	public static void setDestinoY(int destinoY) {
+		Robot.destinoY = destinoY;
+	}
+	
+	
+
+	/**
+	 * @return the haLlegado
+	 */
+	public boolean isHaLlegado() {
+		return haLlegado;
 	}
 
 	@Override

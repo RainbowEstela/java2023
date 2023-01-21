@@ -147,6 +147,9 @@ public class TestRobot {
 		Robot.setDestinoX((int) (Math.random() * (Robot.getColumnastablero() + 1)));
 		Robot.setDestinoY((int) (Math.random() * (Robot.getColumnastablero() + 1)));
 		var misBots = new ArrayList<Robot>();
+		/*
+		 * cambia el numero para meter más robots en el tablero
+		 */
 		crearRobots(misBots, 9);
 		for (Robot i : misBots) {
 			
@@ -159,7 +162,9 @@ public class TestRobot {
 			
 		} while (noLlegoRobot == true);
 	
-		
+		for(Robot i: misBots) {
+			System.out.println(i.toString());
+		}
 	}
 
 }

@@ -9,6 +9,7 @@ public class Test {
 	public static void main(String[] args) {
 		var per = new Persona();
 		var sc = new Scanner(System.in);
+		int mci = 0;
 		boolean valido = false;
 		
 		//set nombre
@@ -55,7 +56,7 @@ public class Test {
 		per.setPeso(peso);
 		
 		//set altura
-		System.out.println("altura:");
+		System.out.println("altura (en metros):");
 		double altura = Double.parseDouble(sc.nextLine());
 		per.setAltura(altura);
 		
@@ -74,6 +75,35 @@ public class Test {
 			System.out.println(per.getEdad() + " NO es mayor de edad");
 		}
 		
+		//comporbar MCI
+		mci = per.calcularIMC();
+		
+		switch (mci) {
+			case -1:
+				System.out.println(per.getNombre() + " tiene sobrepeso");
+				break;
+			case 0:
+				System.out.println(per.getNombre() + " está en su peso ideal");
+				break;
+			case 1:
+				System.out.println(per.getNombre() + " tiene infrapeso");
+				break;
+	
+		}
+		
+		//creacion de persona igual
+		var per2 = new Persona(per);
+		per2.setAltura(0);
+		per2.setEdad(0);
+		per2.setGenero(Genero.O);
+		per2.setNombre("nombre");
+		per2.setPeso(400);
+		
+		if (per.equals(per2)) {
+			System.out.println("son la misma persona");
+		} else {
+			System.out.println("no son la misma persona");
+		}
 		
 	}
 

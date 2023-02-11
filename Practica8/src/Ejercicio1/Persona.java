@@ -231,7 +231,7 @@ public class Persona {
 	 * @return
 	 */
 	public int calcularIMC() {
-		double imc = this.peso/this.altura;
+		double imc = this.peso/(this.altura * this.altura);
 		
 		if (imc < 20) { //debajo del peso ideal
 			return 1;

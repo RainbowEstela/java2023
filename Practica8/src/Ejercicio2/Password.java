@@ -44,6 +44,10 @@ public class Password {
 	
 	//METODOS
 	
+	/**
+	 * comprueba si una contraseña es fuerte->true o debil-> false 
+	 * @return
+	 */
 	public boolean esFuerte() {
 		int mayus = 0;
 		int minus = 0;

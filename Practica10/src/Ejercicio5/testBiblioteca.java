@@ -28,9 +28,9 @@ public class testBiblioteca {
 			switch (opc) {
 			case 1:
 				titulo = sc.nextLine();
-				pub = miBibloteca.buscar(titulo);
+				pub = miBibloteca.buscar(titulo).;
 				if (pub != null) {
-					pub.
+					
 				}
 				break;
 			case 2:

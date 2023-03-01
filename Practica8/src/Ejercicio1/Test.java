@@ -91,7 +91,7 @@ public class Test {
 	
 		}
 		
-		//creacion de persona igual
+		//creacion de persona igual//
 		var per2 = new Persona(per);
 		per2.setAltura(0);
 		per2.setEdad(0);

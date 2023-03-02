@@ -15,15 +15,20 @@ public class ConservarFecha {
 	
 	
 	public String normalToAmericano(String st) {
-		LocalDate fecha = LocalDate.parse(st);
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("MM dd yyyy");
-		String americano = fecha.format(formato);
-		return americano;
+		DateTimeFormatter formatoNormal = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate fecha = LocalDate.parse(st,formatoNormal);
+		
+		DateTimeFormatter formatoAmericano = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		return fecha.format(formatoAmericano);
 	}
 	
-	/*
-	public String americanoToNormal(int year, int mes, int dia) {
+	
+	public String americanoToNormal(String st) {
+		DateTimeFormatter formatoAmericano = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		LocalDate fecha = LocalDate.parse(st,formatoAmericano);
 		
+		DateTimeFormatter formatoNormal = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		return fecha.format(formatoNormal);
 	}
-	*/
+	
 }

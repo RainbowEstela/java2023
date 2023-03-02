@@ -4,6 +4,7 @@
 package Ejercicio4;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 
 /**
  * @author user
@@ -11,6 +12,14 @@ import java.time.LocalDateTime;
  */
 public class FechaUtils {
 	public static void cuentaAtras(LocalDateTime fechaHasta, String titulo) {
-		LocalDateTime restante = fechaHasta.minus(LocalDateTime.now());
+		LocalDateTime fechaAhora = LocalDateTime.now();
+		
+		
 	}
+	
+	public static String diaCumple(LocalDateTime fechaCumple, int year) {
+		return fechaCumple.withYear(year).getDayOfWeek().toString();
+	}
+	
+	
 }

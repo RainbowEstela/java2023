@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author user
  *
  */
-public abstract class Triangulo implements Comparable {
+public abstract class Triangulo implements Comparable<Triangulo> {
 	double lado1;
 	double lado2;
 	double lado3;
@@ -20,6 +20,10 @@ public abstract class Triangulo implements Comparable {
 		this.lado1 = 1;
 		this.lado2 = 1;
 		this.lado3 = 1;
+		
+		if (this.valido() == false) {
+			throw new IllegalArgumentException("Error, los valores de estos lados no se corresponden");
+		}
 	}
 	/**
 	 * @param lado1
@@ -31,6 +35,27 @@ public abstract class Triangulo implements Comparable {
 		this.lado1 = lado1;
 		this.lado2 = lado2;
 		this.lado3 = lado3;
+		
+		if (this.valido() == false) {
+			throw new IllegalArgumentException("Error, los valores de estos lados no se corresponden");
+		}
+	}
+	
+	
+	/**
+	 * @param lado1
+	 * @param lado2
+	 * @param lado3
+	 */
+	public Triangulo(Triangulo t) {
+		super();
+		this.lado1 = t.lado1;
+		this.lado2 = t.lado2;
+		this.lado3 = t.lado3;
+		
+		if (this.valido() == false) {
+			throw new IllegalArgumentException("Error, los valores de estos lados no se corresponden");
+		}
 	}
 	/**
 	 * @return the lado1
@@ -85,6 +110,7 @@ public abstract class Triangulo implements Comparable {
 				&& Double.doubleToLongBits(lado2) == Double.doubleToLongBits(other.lado2)
 				&& Double.doubleToLongBits(lado3) == Double.doubleToLongBits(other.lado3);
 	}
+	
 	
 	public abstract double area();
 	

@@ -2,13 +2,11 @@ package Ejercicio5;
 
 public class Libro extends Publicacion implements Prestable {
 	
-	private boolean prestado;
 	
 	/**
 	 */
 	public Libro() {
 		super();
-		this.prestado = false;
 	}
 
 	/**
@@ -19,7 +17,6 @@ public class Libro extends Publicacion implements Prestable {
 	 */
 	public Libro(String isbn, String titulo, int year, int paginas) {
 		super(isbn, titulo, year, paginas);
-		this.prestado = false;
 	}
 
 
@@ -40,5 +37,27 @@ public class Libro extends Publicacion implements Prestable {
 	public boolean estaPrestado() {
 		return this.prestado;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Libro [isbn=");
+		builder.append(isbn);
+		builder.append(", titulo=");
+		builder.append(titulo);
+		builder.append(", year=");
+		builder.append(year);
+		builder.append(", paginas=");
+		builder.append(paginas);
+		builder.append(", prestado=");
+		builder.append(prestado);
+		builder.append(", misAutores=");
+		builder.append(misAutores);
+		builder.append("]");
+		return builder.toString();
+	}
+
+
+	
 	
 }

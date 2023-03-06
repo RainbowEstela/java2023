@@ -4,6 +4,7 @@
 package Ejercicio5;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author user
@@ -42,12 +43,28 @@ public class Biblioteca {
 	}
 	
 	public Publicacion buscar(String titulo) {
-		int posicion = miMaterial.indexOf(titulo);
-		if (posicion != -1) {
-			return miMaterial.get(posicion);
-		} else {
-			return null;
+		for(Publicacion p : miMaterial) {
+			if (p.getTitulo().equals(titulo)) {
+				return p;
+			}
 		}
+		
+		return null;
+	}
+	
+	public ArrayList<Publicacion> buscar(Autor unAutor) {
+		ArrayList<Publicacion> porAutor = new ArrayList<>();
+		
+		for (Publicacion p : miMaterial) {
+			for (Autor a : p.misAutores) {
+				if (a.equals(unAutor)) {
+					porAutor.add(p);
+					break;
+				}
+			}
+		}
+		
+		return porAutor;
 	}
 	
 }

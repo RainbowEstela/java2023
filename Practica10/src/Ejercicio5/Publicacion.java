@@ -3,17 +3,20 @@
  */
 package Ejercicio5;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  * @author user
  *
  */
-public class Publicacion {
-	private String isbn;
-	private String titulo;
-	private int year;
-	private int paginas;
+public abstract class Publicacion implements Prestable {
+	protected String isbn;
+	protected String titulo;
+	protected int year;
+	protected int paginas;
+	protected boolean prestado;
+	protected ArrayList<Autor> misAutores;
 	
 	/**
 	 */
@@ -23,6 +26,8 @@ public class Publicacion {
 		this.titulo = "";
 		this.year = 0;
 		this.paginas = 0;
+		this.prestado = false;
+		this.misAutores = new ArrayList<>();
 	}
 
 	/**
@@ -37,6 +42,8 @@ public class Publicacion {
 		this.titulo = titulo;
 		this.year = year;
 		this.paginas = paginas;
+		this.prestado = false;
+		this.misAutores = new ArrayList<>();
 	}
 
 	/**
@@ -106,6 +113,10 @@ public class Publicacion {
 		builder.append(year);
 		builder.append(", paginas=");
 		builder.append(paginas);
+		builder.append(", prestado=");
+		builder.append(prestado);
+		builder.append(", misAutores=");
+		builder.append(misAutores);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -127,4 +138,35 @@ public class Publicacion {
 		return Objects.equals(titulo, other.titulo);
 	}
 	
+	
+	public void presta() {
+		this.prestado = true;
+
+	}
+
+	
+	public void devuelve() {
+		this.prestado = false;
+
+	}
+
+	
+	public boolean estaPrestado() {
+		return this.prestado;
+	}
+	
+	public void addAutor(Autor unAutor) {
+		int indice = this.misAutores.indexOf(unAutor);
+		if (indice == -1) {
+			this.misAutores.add(unAutor);
+		}
+	}
+	
+	public void delAutor(Autor unAutor) {
+		this.misAutores.remove(unAutor);
+	}
+	
+	public ArrayList<Autor> getAutores() {
+		return this.misAutores;
+	}
 }

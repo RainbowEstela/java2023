@@ -3,12 +3,14 @@
  */
 package Ejercicio7;
 
+import java.time.LocalDate;
+
 /**
  * @author user
  *
  */
 public class Podcast extends Multimedia {
-	private String fecha;
+	private LocalDate fecha;
 	private int capitulo;
 	/**
 	 * @param nombre
@@ -17,7 +19,7 @@ public class Podcast extends Multimedia {
 	 * @param fecha
 	 * @param capitulo
 	 */
-	public Podcast(String nombre, int duracion, int year, String fecha, int capitulo) {
+	public Podcast(String nombre, int duracion, int year, LocalDate fecha, int capitulo) {
 		super(nombre, duracion, year);
 		this.fecha = fecha;
 		this.capitulo = capitulo;

@@ -12,13 +12,11 @@ public class Cancion extends Multimedia {
 	 * @param year
 	 * @param posicion
 	 * @param genero
-	 * @param miDisco
 	 */
-	public Cancion(String nombre, int duracion, int year, int posicion, Genero genero, Disco miDisco) {
+	public Cancion(String nombre, int duracion, int year, int posicion, Genero genero) {
 		super(nombre, duracion, year);
 		this.posicion = posicion;
 		this.genero = genero;
-		this.miDisco = miDisco;
 	}
 	/**
 	 * @return the posicion
@@ -55,6 +53,28 @@ public class Cancion extends Multimedia {
 	 */
 	public void setMiDisco(Disco miDisco) {
 		this.miDisco = miDisco;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cancion [nombre=");
+		builder.append(nombre);
+		builder.append(", duracion=");
+		builder.append(duracion);
+		builder.append(", year=");
+		builder.append(year);
+		builder.append(", autores=");
+		builder.append(autores);
+		builder.append(", reproducciones=");
+		builder.append(reproducciones);
+		builder.append(", posicion=");
+		builder.append(posicion);
+		builder.append(", genero=");
+		builder.append(genero);
+		builder.append(", miDisco=");
+		builder.append(miDisco);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

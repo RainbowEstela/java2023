@@ -73,17 +73,19 @@ public class Multimedia implements Reproducible {
 	}
 
 	
-	public void addAutor(String nombre, String direccion) {
-		Autor nuevoAutor = new Autor(nombre, direccion);
-		if (this.autores.indexOf(nuevoAutor) == -1) {
-			this.autores.add(nuevoAutor);
+	public void addAutor(Autor unAutor) {
+		if (this.autores.indexOf(unAutor) == -1) {
+			this.autores.add(unAutor);
 		}
 	}
 	
-	public void quitarAutor(String nombre, String direcion) {
-		Autor nuevoAutor = new Autor(nombre, direcion);
-		this.autores.remove(nuevoAutor);
+	public void quitarAutor(Autor unAutor) {
+		this.autores.remove(unAutor);
 		
+	}
+	
+	public ArrayList<Autor> getAutores() {
+		return this.autores;
 	}
 	@Override
 	public String toString() {

@@ -19,7 +19,7 @@ public class FechaUtils {
 		LocalDateTime fechaAhora = LocalDateTime.now();
 		Duration horasHasta = Duration.between(LocalTime.of(fechaAhora.getHour(), fechaAhora.getMinute(), fechaAhora.getSecond()), LocalTime.of(fechaHasta.getHour(), fechaHasta.getMinute(), fechaHasta.getSecond()));
 		Period diasHasta = Period.between(LocalDate.of(fechaAhora.getDayOfYear(), fechaAhora.getMonthValue(), fechaAhora.getDayOfMonth()), LocalDate.of(fechaHasta.getDayOfYear(), fechaHasta.getMonthValue(), fechaHasta.getDayOfMonth()));
-		System.out.println(" quedan " + diasHasta.getYears() + " aÃ±os, " + diasHasta.getMonths() + " meses, " + diasHasta.getDays() + " dias, " + horasHasta.toHoursPart() + " horas, "+ horasHasta.toMinutesPart() + " minutos," + horasHasta.toSecondsPart() + " hasta " + titulo);
+		System.out.println(" quedan " + diasHasta.getYears() + " años, " + diasHasta.getMonths() + " meses, " + diasHasta.getDays() + " dias, " + horasHasta.toHoursPart() + " horas, "+ horasHasta.toMinutesPart() + " minutos," + horasHasta.toSecondsPart() + " hasta " + titulo);
 		
 	}
 	

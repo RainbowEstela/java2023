@@ -1,0 +1,5 @@
+package Ejercicio;
+
+public enum Tipo {
+	PANTALON,CAMISA,SUJETADORDEPORTIVO,LEGGINS,SUDADERA
+}

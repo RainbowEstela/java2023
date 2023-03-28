@@ -21,6 +21,9 @@ public class Test {
 		TipoArmadura anillo2 = new TipoArmadura("Anillo de roca", Zona.BRAZOIZQ, 20, 20);
 		TipoArmadura bracalete1 = new TipoArmadura("Bracalete de plomo",Zona.BRAZODER,30,10);
 		
+		/*
+		 * LISTAR HS
+		 */
 		System.out.println("Listar de personajeHS\n----------------");
 		pHS.addArmadura(casco1);
 		pHS.addArmadura(casco2);
@@ -49,6 +52,9 @@ public class Test {
 		System.out.println("-----------------");
 		System.out.println("");
 		
+		/*
+		 * LISTAR AL
+		 */
 		System.out.println("Listar personajeAL");
 		System.out.println("-----------------");
 		
@@ -79,6 +85,9 @@ public class Test {
 		System.out.println("-----------------");
 		System.out.println("");
 		
+		/*
+		 * LISTAR TS
+		 */
 		System.out.println("Listar de personajeTS\n----------------");
 		pTS.addArmadura(casco1);
 		pTS.addArmadura(casco2);

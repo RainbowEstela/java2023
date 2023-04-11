@@ -5,6 +5,7 @@ public class Revista extends Publicacion {
 	private int numero;
 	
 	/**
+	 * constructor por defecto
 	 */
 	public Revista() {
 		super();
@@ -14,6 +15,7 @@ public class Revista extends Publicacion {
 	
 	
 	/**
+	 * constructor con todos los parametros
 	 * @param isbn
 	 * @param titulo
 	 * @param year

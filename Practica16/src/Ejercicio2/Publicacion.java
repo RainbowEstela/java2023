@@ -20,6 +20,7 @@ public abstract class Publicacion implements Prestable, Comparable<Publicacion> 
 	protected TreeSet<Autor> misAutores;
 	
 	/**
+	 * Constructor por defecto
 	 */
 	public Publicacion() {
 		super();
@@ -32,6 +33,7 @@ public abstract class Publicacion implements Prestable, Comparable<Publicacion> 
 	}
 
 	/**
+	 * Constructor con todos los parametros
 	 * @param isbn
 	 * @param titulo
 	 * @param year
@@ -139,32 +141,49 @@ public abstract class Publicacion implements Prestable, Comparable<Publicacion> 
 		return Objects.equals(titulo, other.titulo);
 	}
 	
-	
+	/**
+	 * simula la accion de prestrar un libro cambiando la propiedad prestado a true
+	 */
 	public void presta() {
 		this.prestado = true;
 
 	}
 
-	
+	/**
+	 * simula la devolucion de un libro cambiando su propiedad prestado a false
+	 */
 	public void devuelve() {
 		this.prestado = false;
 
 	}
 
-	
+	/**
+	 * Comprueba el estado del libo si esta prestado o no con true o false
+	 */
 	public boolean estaPrestado() {
 		return this.prestado;
 	}
 	
+	/**
+	 * añade un autor si no esta repetido a la publicacion
+	 */
 	public void addAutor(Autor unAutor) {
 		this.misAutores.add(unAutor);
 		
 	}
 	
+	/**
+	 * elimina un autor de la publicacion
+	 * @param unAutor
+	 */
 	public void delAutor(Autor unAutor) {
 		this.misAutores.remove(unAutor);
 	}
 	
+	/**
+	 * devuelve el treeset de autores de la publicacion
+	 * @return
+	 */
 	public TreeSet<Autor> getAutores() {
 		return misAutores;
 	}

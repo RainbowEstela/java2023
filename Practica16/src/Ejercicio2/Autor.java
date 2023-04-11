@@ -17,6 +17,7 @@ public class Autor implements Comparable<Autor> {
 	private String direccion;
 	private String email;
 	/**
+	 * constructor de la clase Autor
 	 * @param nombre
 	 * @param apellidos
 	 * @param edad

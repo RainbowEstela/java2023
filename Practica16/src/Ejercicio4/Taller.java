@@ -62,8 +62,16 @@ public class Taller {
 	 * simula la accion de reparar un vehiculo cambiando su estado a reparado
 	 * @param v
 	 */
-	public void vehiculoReparado(Vehiculo v) {
-		v.setEstado(Estado.REPARADO);
+	public Vehiculo vehiculoReparado(Vehiculo v) {
+		Vehiculo reparado = vehiculos.get(Collections.binarySearch(vehiculos, v));
+		
+		if (reparado != null) {
+			reparado.setEstado(Estado.REPARADO);
+			return reparado;
+		} else {
+			return null;
+		}
+		
 	}
 	
 	/**

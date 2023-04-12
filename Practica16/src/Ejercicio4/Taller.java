@@ -33,9 +33,9 @@ public class Taller {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Taller [vehiculos=");
-		builder.append(vehiculos);
-		builder.append("]");
+		for (Vehiculo v : vehiculos) {
+			builder.append(v.toString() + "\n");
+		}
 		return builder.toString();
 	}
 	
@@ -63,9 +63,13 @@ public class Taller {
 	 * @param v
 	 */
 	public Vehiculo vehiculoReparado(Vehiculo v) {
-		Vehiculo reparado = vehiculos.get(Collections.binarySearch(vehiculos, v));
+		int index = Collections.binarySearch(vehiculos, v);
 		
-		if (reparado != null) {
+		
+		
+		
+		if (index >= 0) {
+			Vehiculo reparado = vehiculos.get(index);
 			reparado.setEstado(Estado.REPARADO);
 			return reparado;
 		} else {
@@ -90,7 +94,17 @@ public class Taller {
 		}
 	}
 	
-	public Vehiculo buscarVehiculo(String matricula) {		
-		return vehiculos.get(Collections.binarySearch(vehiculos, new Vehiculo(matricula, "", "", "", 0, 0)));
+	/**
+	 * busca un vehiculo por matricula y lo devuelve si lo encuentra
+	 * @param matricula
+	 * @return
+	 */
+	public Vehiculo buscarVehiculo(String matricula) {
+		int index = Collections.binarySearch(vehiculos, new Vehiculo(matricula, "", "", "", 0, 0));
+		if (index >= 0) {
+			return vehiculos.get(index);
+		} else {
+			return null;
+		}
 	}
 }

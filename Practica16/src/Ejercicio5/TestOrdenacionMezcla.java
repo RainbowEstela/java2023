@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class TestOrdenacionMezcla {
 
 	public static void main(String[] args) {
-		OrdenacionMezcla<Integer> o = new OrdenacionMezcla<>();
+		OrdenacionMezcla o = new OrdenacionMezcla();
 		
 		System.out.println(o.ordenacion(Arrays.asList(1,2,3,7,8), Arrays.asList(3,4,5,6)));
 

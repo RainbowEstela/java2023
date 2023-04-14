@@ -28,9 +28,7 @@ public class EquipoBasket {
 	 * @param jugador
 	 */
 	public void addJugador(int dorsal, JugadorBasket jugador) {
-		if(!equipo.containsKey(dorsal)) {
 			equipo.put(dorsal, jugador);
-		}
 	}
 	
 	/**
@@ -63,6 +61,7 @@ public class EquipoBasket {
 	public JugadorBasket buscarJugador(JugadorBasket jugador) {
 		LinkedList<JugadorBasket> jugadores = new LinkedList<>(equipo.values());
 		Collections.sort(jugadores);
+		
 		int index = Collections.binarySearch(jugadores, jugador);
 		
 		if (index >= 0) {

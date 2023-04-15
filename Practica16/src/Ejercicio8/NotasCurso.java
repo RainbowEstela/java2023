@@ -7,6 +7,7 @@ import java.lang.foreign.VaList.Builder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.TreeSet;
 
 /**
  * @author user
@@ -146,8 +147,10 @@ public class NotasCurso {
 	 */
 	public String pintarNotas() {
 		StringBuilder sb = new StringBuilder();
+		TreeSet<String> keysOrdenadas = new TreeSet<>(notas.keySet());
 		
-		for(String k : notas.keySet()) {
+		
+		for(String k : keysOrdenadas) {
 			sb.append(k + ": " + notas.get(k) + "\n");
 		}
 		
@@ -164,7 +167,7 @@ public class NotasCurso {
 		builder.append(", curso=");
 		builder.append(curso);
 		builder.append(", anio=");
-		builder.append(anio + ":");
+		builder.append(anio + ":\n");
 		builder.append(this.pintarNotas());
 		return builder.toString();
 	}

@@ -32,7 +32,7 @@ public class Agenda {
 	}
 	
 	/**
-	 * añade un contacto y su numero a la agenda en caso de no añadirlo retorna false
+	 * aÃ±ade un contacto y su numero a la agenda en caso de no aÃ±adirlo retorna false
 	 * @param contacto
 	 * @param telefono
 	 * @return

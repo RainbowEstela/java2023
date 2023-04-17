@@ -3,7 +3,6 @@
  */
 package Ejercicio8;
 
-import java.lang.foreign.VaList.Builder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Objects;
@@ -116,7 +115,7 @@ public class NotasCurso {
 
 	//METODOS PROPIOS
 	/**
-	 * añade o remplaza una asginatura con su nota
+	 * aÃ±ade o remplaza una asginatura con su nota
 	 * @param asignatura
 	 * @param nota
 	 */

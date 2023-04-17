@@ -23,7 +23,7 @@ public class EquipoBasket {
 	}
 	
 	/**
-	 * añade un jugador con una dorsal sustiye en caso de ser dorsal repetido
+	 * aÃ±ade un jugador con una dorsal sustiye en caso de ser dorsal repetido
 	 * @param dorsal
 	 * @param jugador
 	 */

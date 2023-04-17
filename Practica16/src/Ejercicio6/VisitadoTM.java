@@ -28,7 +28,7 @@ public class VisitadoTM {
 	}
 	
 	/**
-	 * añade un pais que no estuviera al mapa
+	 * aÃ±ade un pais que no estuviera al mapa
 	 * @param pais
 	 */
 	public void addPais(String pais) {
@@ -36,7 +36,7 @@ public class VisitadoTM {
 	}
 	
 	/**
-	 * Añade una ciudad nueva a un pais del mapa
+	 * AÃ±ade una ciudad nueva a un pais del mapa
 	 * @param pais
 	 * @param ciudad
 	 */

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class testBiblioteca {
 
 	public static void main(String[] args) {
-		var miBibloteca = new Biblioteca("c/ naranjo nº 7");
+		var miBibloteca = new Biblioteca("c/ naranjo nÂº 7");
 		int opc = 0;
 		Scanner sc = new Scanner(System.in);
 		String titulo = "";

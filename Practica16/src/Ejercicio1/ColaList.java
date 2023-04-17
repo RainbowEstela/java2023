@@ -30,7 +30,7 @@ public class ColaList<E> {
 	}
 	
 	/**
-	 * Metodo que añade el objeto a al final de la cola y devuelve true si es añadido
+	 * Metodo que aÃ±ade el objeto a al final de la cola y devuelve true si es aÃ±adido
 	 * No acepta duplicados
 	 * @param e
 	 * @return

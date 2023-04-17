@@ -37,7 +37,7 @@ public class Liga {
 	}
 	
 	/**
-	 * aÒade o remplaza un equipo dado su nombre y el equipo
+	 * a√±ade o remplaza un equipo dado su nombre y el equipo
 	 * @param nombre
 	 * @param equipo
 	 */
@@ -46,7 +46,7 @@ public class Liga {
 	}
 	
 	/**
-	 * borra el equipo del mapa si est· presente
+	 * borra el equipo del mapa si est√° presente
 	 * @param nombre
 	 */
 	public void removeEquipo(String nombre) {

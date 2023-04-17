@@ -98,7 +98,7 @@ public class Expediente implements Comparable<Expediente>{
 	//Metodos propios
 	
 	/**
-	 * AÒade un objeto notas curso si no es repetido
+	 * A√±ade un objeto notas curso si no es repetido
 	 * @param n
 	 */
 	public void addNotas(NotasCurso n) {
@@ -116,9 +116,9 @@ public class Expediente implements Comparable<Expediente>{
 	public String mostrarNotas(int curso, EtapaAcademica etapa, String ciclo, int anio) {
 		//como el hashset que guarda las notas no permite obtener un valor concreto
 		//habria que pasarlo a una list para poder buscar por indice
-		//pero como notas curso tiene tantas variables no es posible hacer un comparador que tenga en cuenta todas las variables ya que no dejaria meter dos notasCurso del mismo aÒo
+		//pero como notas curso tiene tantas variables no es posible hacer un comparador que tenga en cuenta todas las variables ya que no dejaria meter dos notasCurso del mismo a√±o
 		//asi que no puedo hacer una busqueda eficiente en este caso
-		//como mucho puedo hacer una busqueda de verdadero o falso para no tener que hacer tantas busquedas si no est· el notasCurso que quiero buscar
+		//como mucho puedo hacer una busqueda de verdadero o falso para no tener que hacer tantas busquedas si no est√° el notasCurso que quiero buscar
 		if (this.notas.contains(new NotasCurso(etapa, ciclo, curso, anio))) {
 			ArrayList<NotasCurso> n = new ArrayList<>(this.notas);
 			

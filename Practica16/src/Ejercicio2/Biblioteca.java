@@ -40,7 +40,7 @@ public class Biblioteca {
 	}
 	
 	/**
-	 * añade un objeto publicacion a la lista de publicaciones de la biblioteca
+	 * aÃ±ade un objeto publicacion a la lista de publicaciones de la biblioteca
 	 * @param unaPub
 	 */
 	public void adquirirMaterial(Publicacion unaPub) {
@@ -54,8 +54,8 @@ public class Biblioteca {
 	 */
 	public Publicacion buscar(String titulo) {
 		Collections.sort(miMaterial);
-		//decidí usar uno de los hijos de publicacion para hacer el binary search para no cambiar el parámetro de esta funcion
-		//hacer este apaño me ahorra tener que cambiar más codigo en la clase testbiblioteca pero si el ejercicio lo hubiera empezado de cero
+		//decidÃ­ usar uno de los hijos de publicacion para hacer el binary search para no cambiar el parï¿½metro de esta funcion
+		//hacer este apaÃ±o me ahorra tener que cambiar mas codigo en la clase testbiblioteca pero si el ejercicio lo hubiera empezado de cero
 		//pediria por parametro un objeto publicacion
 		int index = Collections.binarySearch(miMaterial, new Libro("", titulo, 0, 0));
 		/*

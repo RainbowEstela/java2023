@@ -40,7 +40,7 @@ public class CentroEducativo {
 	}
 	
 	/**
-	 * añade un expediente al centro si no existe
+	 * aÃ±ade un expediente al centro si no existe
 	 * @param e
 	 */
 	public void addExpediente(Expediente e) {

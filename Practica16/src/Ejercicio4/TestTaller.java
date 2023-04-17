@@ -30,7 +30,7 @@ public class TestTaller {
 	public static void reparado(Taller t, String matricula) {
 		Vehiculo v = t.vehiculoReparado(t.buscarVehiculo(matricula));
 		if (v != null) {
-			System.out.println("Se reparÛ el coche:");
+			System.out.println("Se repar√≥ el coche:");
 			System.out.println(v.toString());
 			t.eliminarVehiculo(v);
 		} else {
@@ -63,7 +63,7 @@ public class TestTaller {
 		double kw = 0;
 		
 		if (opc < 1 || opc > 3) {
-			System.out.println("Error: opcion no v·lida");
+			System.out.println("Error: opcion no v√°lida");
 			return null;
 		}
 		
@@ -187,11 +187,11 @@ public class TestTaller {
 					if(exito == true) {
 						System.out.println("Coche aceptado");
 					} else {
-						System.out.println("Coche repetido, no se pudo aÒadir");
+						System.out.println("Coche repetido, no se pudo a√±adir");
 					}
 					
 				} else {
-					System.out.println("ERROR: opciÛn no v·lida");
+					System.out.println("ERROR: opci√≥n no v√°lida");
 				}
 				break;
 			case 2://reparar coche
@@ -203,7 +203,7 @@ public class TestTaller {
 				System.out.println("datos del vehiculo reparado:");
 				System.out.println(v.toString());
 				} else {
-					System.out.println("Ese coche no est· en el taller");
+					System.out.println("Ese coche no estÔøΩ en el taller");
 				}
 				break;
 
@@ -224,12 +224,12 @@ public class TestTaller {
 				break;
 
 			case 5://salir
-				System.out.println("tenga un buen dÌa");
+				System.out.println("tenga un buen d√≠a");
 				break;
 
 
 			default:
-				System.out.println("ERROR: opcion no v·lida");
+				System.out.println("ERROR: opcion no v√°lida");
 				break;
 			}
 			

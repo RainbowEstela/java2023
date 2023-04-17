@@ -24,7 +24,7 @@ public class VisitadoHM {
 	}
 	
 	/**
-	 * añade un nuevo pais al mapa
+	 * aÃ±ade un nuevo pais al mapa
 	 * @param nombre
 	 */
 	public void addPais(String nombre) {
@@ -32,7 +32,7 @@ public class VisitadoHM {
 	}
 	
 	/**
-	 * añade a un pais que esté en el mapa una ciudad visitada
+	 * aÃ±ade a un pais que estÃ¡ en el mapa una ciudad visitada
 	 * @param nomPais
 	 * @param nombCiudad
 	 */

@@ -42,7 +42,7 @@ public class Taller {
 	//Metodos propios
 	
 	/**
-	 * añade un vehiculo si su matricula no esta y devuelve true, si la matricula esta no lo añade y retorna false
+	 * aÃ±ade un vehiculo si su matricula no esta y devuelve true, si la matricula esta no lo aÃ±ade y retorna false
 	 * @param v
 	 * @return
 	 */

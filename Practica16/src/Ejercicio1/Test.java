@@ -9,7 +9,7 @@ public class Test {
 		miCola.meter(new Proceso(1, "virus", 0.9, 0.9, 1));
 		miCola.meter(new Proceso(45, "Naraka", 0.3, 0.1, 10));
 		miCola.meter(new Proceso(7, "Discord", 0.2, 0.3, 7));
-		//comprobacion de que no acepta repetidos y añade en orden
+		//comprobacion de que no acepta repetidos y aÃ±ade en orden
 		System.out.println(miCola.toString());
 		
 		//comprobacion de que peek no quita de la cola

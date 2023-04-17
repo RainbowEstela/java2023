@@ -165,7 +165,7 @@ public abstract class Publicacion implements Prestable, Comparable<Publicacion> 
 	}
 	
 	/**
-	 * añade un autor si no esta repetido a la publicacion
+	 * aÃ±ade un autor si no esta repetido a la publicacion
 	 */
 	public void addAutor(Autor unAutor) {
 		this.misAutores.add(unAutor);

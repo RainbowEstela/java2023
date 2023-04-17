@@ -10,7 +10,7 @@ package Ejercicio1;
 public class Empleado {
 	
 	/**
-	 * Características
+	 * CaracterÃ­sticas
 	 */
 	
 	private String nombre;

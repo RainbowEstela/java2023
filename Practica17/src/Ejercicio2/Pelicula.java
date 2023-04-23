@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  */
 public class Pelicula {
-	private static int autoincremental;
+	private static int autoincremental = 1;
 	
 	private int id;
 	private String titulo;
@@ -19,8 +19,24 @@ public class Pelicula {
 	private ArrayList<Genero> generos;
 	private ArrayList<Director> directores;
 	
+	
+	
 	/**
-	 * Constructor
+	 * Constructor por defecto
+	 * no aumenta el autoincremento de las ids
+	 * puede usarse en caso de querer buscar un objeto pelicula por id
+	 */
+	public Pelicula() {
+		super();
+		this.id = 0;
+		this.titulo = "";
+		this.anio = 0;
+		this.generos = new ArrayList<>();
+		this.directores = new ArrayList<>();
+	}
+
+	/**
+	 * Constructor con parametros, tiene una id autoincremental por cada pelicula nueva creada
 	 * @param id
 	 * @param titulo
 	 * @param anio
@@ -91,6 +107,8 @@ public class Pelicula {
 		return directores;
 	}
 
+
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -100,6 +118,10 @@ public class Pelicula {
 		builder.append(titulo);
 		builder.append(", anio=");
 		builder.append(anio);
+		builder.append(", generos=");
+		builder.append(generos);
+		builder.append(", directores=");
+		builder.append(directores);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -121,6 +143,31 @@ public class Pelicula {
 		return id == other.id;
 	}
 	
+	//METODOS Propios
 	
+	public void addGenero(Genero g) {
+		this.generos.add(g);
+	}
+	
+	public void removeGenero(Genero g) {
+		this.generos.remove(g);
+	}
+	
+	public void addDirector(Director d) {
+		//como una pelicula no suele tener muchos autores no ganamos mucho rendimiento haciendo una busqueda eficiente
+		if (this.directores.indexOf(d) == -1) {
+			this.directores.add(d);
+			d.addPelicula(this);
+		}
+		
+	}
+	
+	public void removeDirector(Director d) {
+		
+		if (this.directores.indexOf(d) != -1) {
+			this.directores.get(this.directores.indexOf(d)).removePelicula(this);
+			this.directores.remove(d);
+		}
+	}
 	
 }

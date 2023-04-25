@@ -74,8 +74,11 @@ public class Ejercicio1 {
 		//apartado6
 		System.out.println("APARTADO 6");
 		System.out.println("---------");
-		//lista.stream()
-			//.reduce()
+		System.out.println(
+			lista.stream()
+				.reduce( (c1, c2) -> c1 + " - " + c2 )
+				.orElse("Error")
+		);
 			
 		//apartado7
 		System.out.println("APARTADO 7");

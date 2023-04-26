@@ -111,9 +111,9 @@ public class TestPuntuaciones {
 		//st.pintarJugador();
 		//st.pintarJuegos();
 		
-		System.out.println(st.obtenerPuntuaciones(1));
+		st.obtenerPuntuaciones(10).forEach(System.out::println);
 		System.out.println("");
-		// id juego, id usuario
+		//           id juego, id usuario
 		st.buscarPuntuacion(8, 1);
 		System.out.println("");
 		

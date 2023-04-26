@@ -3,12 +3,14 @@
  */
 package Ejercicio3;
 
+import java.util.Objects;
+
 /**
  * @author usuario1daw
  *
  */
 public class Juego {
-	private int autoIncremento = 1;
+	private static int autoIncremento = 1;
 	
 	private int id;
 	private String nombre;
@@ -91,6 +93,23 @@ public class Juego {
 		builder.append(plataforma);
 
 		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Juego other = (Juego) obj;
+		return id == other.id;
 	}
 	
 	

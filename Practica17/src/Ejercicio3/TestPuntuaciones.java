@@ -148,14 +148,17 @@ public class TestPuntuaciones {
 		System.out.println("ORDENAR POR NICK");
 		System.out.println("----------------");
 		nickOrdenado(st);
+		System.out.println("");
 		
 		System.out.println("puntuaciones de los juegadores");
 		System.out.println("------------------------------");
 		puntosJugadores(st);
+		System.out.println("");
 		
 		System.out.println("puntuaciones de un solo jugador");
 		System.out.println("-------------------------------");
 		puntosJugador(st, u1);
+		System.out.println("");
 	}
 
 }

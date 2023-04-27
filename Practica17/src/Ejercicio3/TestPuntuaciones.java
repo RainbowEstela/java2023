@@ -1,7 +1,32 @@
 package Ejercicio3;
 
+import java.util.stream.Collectors;
+
 public class TestPuntuaciones {
 
+	public static void nickOrdenado(Stim st) {
+		st.getJugadores().stream()
+			.sorted( (j1 , j2) -> j1.getNick().compareTo(j2.getNick()))
+			.forEach(System.out::println);
+	}
+	
+	public static void puntosJugadores(Stim st) {
+		st.getJugadores().stream()
+			.forEach( j -> {
+				System.out.println(j.getNick());
+				j.getPuntuaciones().forEach( (k,v) -> System.out.println(k + " " + v));
+			});
+	}
+	
+	public static void puntosJugador(Stim st, Usuario user) {
+		st.getJugadores().stream()
+			.filter( u -> u.equals(user))
+			.flatMap( u -> u.getPuntuaciones().values().stream())
+			.sorted( (e1, e2) -> e2.getPuntos() - e1.getPuntos())
+			.forEach(System.out::println);
+	}
+	
+	
 	public static void main(String[] args) {
 		Stim st = new Stim();
 		
@@ -44,7 +69,7 @@ public class TestPuntuaciones {
 		u4.addPuntuacion(j5.getId(), false, 20);
 		u4.addPuntuacion(j4.getId(), false, 30);
 		
-		Usuario u5 = new Usuario("Helix", "cinco@gmail.com", "Vill-v");
+		Usuario u5 = new Usuario("Helix", "cinco@gmail.com", "Vill-V");
 		u5.addPuntuacion(j3.getId(), true, 70000000);
 		u5.addPuntuacion(j6.getId(), true, 900000);
 		u5.addPuntuacion(j7.getId(), true, 6000000);
@@ -118,8 +143,19 @@ public class TestPuntuaciones {
 		System.out.println("");
 		
 		st.pintarRankingJuegos();
+		//PRUEBA DE LOS METODOS
+		//-------------------
+		System.out.println("ORDENAR POR NICK");
+		System.out.println("----------------");
+		nickOrdenado(st);
 		
+		System.out.println("puntuaciones de los juegadores");
+		System.out.println("------------------------------");
+		puntosJugadores(st);
 		
+		System.out.println("puntuaciones de un solo jugador");
+		System.out.println("-------------------------------");
+		puntosJugador(st, u1);
 	}
 
 }

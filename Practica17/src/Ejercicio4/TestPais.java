@@ -134,9 +134,70 @@ public class TestPais {
 			.collect(Collectors.groupingBy(Pais::getContinente, Collectors.counting()));
 		cantidadContinente.forEach((k,v) -> System.out.println(k + " - " + v));
 		
-		//- Muestra los países ordenados por superficie, y para cada país sus ciudades ordenadas por población.
-		System.out.println(" Muestra los países ordenados por superficie, y para cada país sus ciudades ordenadas por población.\n".toUpperCase());
+		System.out.println("");
+		//Muestra los países ordenados por superficie, y para cada país sus ciudades ordenadas por población.
+		System.out.println("Muestra los países ordenados por superficie, y para cada país sus ciudades ordenadas por población.\n".toUpperCase());
+		paises.stream()
+			.sorted((pa1,pa2) -> (int) (pa1.getSuperficie() - pa2.getSuperficie()) )
+			.forEach( pa -> {
+				System.out.println(pa.getNombre() + " - s: " + pa.getSuperficie() + ":\n--------------");
+				pa.getCiudades().stream()
+					.sorted((ci1,ci2) -> ci1.getPoblacion() - ci2.getPoblacion())
+					.forEach(ci -> System.out.println("* "+ ci.getNombre() + " - p: " + ci.getPoblacion() ));
+				System.out.println("");
+			});
 		
+		System.out.println("");
+		//Muestra cada país, la suma de las poblaciones de sus ciudades.
+		System.out.println("Muestra cada país, la suma de las poblaciones de sus ciudades\n".toUpperCase());
+		paises.stream()
+			.forEach(pa -> {
+				System.out.println(pa.getNombre() + " - " + pa.getCiudades().stream().collect(Collectors.summingInt(Ciudad::getPoblacion)));
+			});
+		
+		System.out.println("");
+		// Capital más poblada
+		System.out.println("Capital más poblada".toUpperCase());
+		System.out.println(
+			paises.stream()
+				.map(pa -> pa.getCapital())
+				.max((ca1,ca2) -> ca1.getPoblacion() - ca2.getPoblacion())
+				.orElse(null)
+		);
+		
+		System.out.println("");
+		//Países ordenados por densidad de población
+		System.out.println("Países ordenados por densidad de población");
+		paises.stream()
+			.sorted((pa1,pa2) -> (int) ((pa1.getPoblacion() / pa1.getSuperficie()) - (pa2.getPoblacion() / pa2.getSuperficie())))
+			.forEach(pa -> System.out.println(pa.getNombre() + " - " + (pa.getPoblacion() / pa.getSuperficie())));
+		
+		System.out.println("");
+		//Devuelve la primera capital que empiece por C
+		System.out.println("Devuelve la primera capital que empiece por C");
+		System.out.println(
+		paises.stream()
+			.map(pa -> pa.getCapital())
+			.filter(ca -> ca.getNombre().startsWith("C"))
+			.findFirst()
+			.orElse(null)
+		);
+		
+		System.out.println("");
+		//Muestra cada país y su ciudad más poblada
+		System.out.println("Muestra cada país y su ciudad más poblada\n".toUpperCase());
+		paises.stream()
+			.forEach(pa -> System.out.println(pa.getNombre() + ": " + pa.getCiudades().stream().max((ci1,ci2) -> ci1.getPoblacion() - ci2.getPoblacion()).get().getNombre()));
+		
+		System.out.println("");
+		//Muestra la ciudad más poblada. Puedes usar el ejercicio anterior y continuar a partir de él
+		System.out.println("Muestra la ciudad más poblada. Puedes usar el ejercicio anterior y continuar a partir de él\n".toUpperCase());
+		System.out.println(
+			paises.stream()
+				.flatMap(pa -> pa.getCiudades().stream())
+				.max((ci1,ci2) -> ci1.getPoblacion() - ci2.getPoblacion())
+				.get()
+		);
 	}
 
 }

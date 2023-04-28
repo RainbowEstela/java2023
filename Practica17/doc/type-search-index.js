@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Ejercicio4","l":"Pais.Continente"},{"p":"Ejercicio4","l":"Pais"}];updateSearchResults();

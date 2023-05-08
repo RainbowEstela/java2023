@@ -90,7 +90,7 @@ public class Gamer implements Comparable<Gamer> {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Gamer [nick=");
+		builder.append("nick=");
 		builder.append(nick);
 		builder.append(", email=");
 		builder.append(email);
@@ -98,7 +98,6 @@ public class Gamer implements Comparable<Gamer> {
 		builder.append(juego);
 		builder.append(", nivel=");
 		builder.append(nivel);
-		builder.append("]");
 		return builder.toString();
 	}
 

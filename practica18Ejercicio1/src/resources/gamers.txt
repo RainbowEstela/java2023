@@ -1,4 +1,6 @@
-RainbowEstela;miqota@gmail.com;ff14;DIOS
-Mogara;klonoe@gmail.com;OmegaStrikers;BUENO
+AhriTheFox;ahri@email.com;lol;MAQUINA
 MaxewellGaming;kingconstant@outlook.com;DST;PAQUETE
+Mogara;klonoe@gmail.com;OmegaStrikers;BUENO
 PinkElf;elysia@gmail.com;HonkaiImpact3er;MAQUINA
+RaidenMei;mei@gmail.com;HonkaiImpact3er;MALILLO
+RainbowEstela;miqota@gmail.com;ff14;DIOS

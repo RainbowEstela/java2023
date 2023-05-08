@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -106,7 +107,29 @@ public class Discord {
 	}
 	
 	public void saveGamers() {
+		Path archivoGuardar = Paths.get("./src/resources/gamers.txt");
 		
+		List<String> listaGamers = this.jugadores.stream()
+										.map( gamer -> {
+											StringBuilder sb = new StringBuilder();
+											
+											sb.append(gamer.getNick());
+											sb.append(";");
+											sb.append(gamer.getEmail());
+											sb.append(";");
+											sb.append(gamer.getJuego());
+											sb.append(";");
+											sb.append(gamer.getNivel());
+											
+											return sb.toString();
+										})
+										.collect(Collectors.toList());
+		
+		try {
+			Files.write(archivoGuardar, listaGamers, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**

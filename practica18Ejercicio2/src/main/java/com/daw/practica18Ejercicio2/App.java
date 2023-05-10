@@ -12,8 +12,13 @@ public class App
     {
     	System.out.println(FileUtils.calcularRecursivamente("C:\\Users\\user\\Desktop\\backup dst"));
     	
+    	//                           fichero        url
     	FileUtils.buscarCoincidencias(".txt", "C:\\Users\\user\\Desktop\\prueba");
+    	
+    	//                                fichero     url
     	//FileUtils.eliminarCoincidencias(".txt", "C:\\Users\\user\\Desktop\\prueba"); //usar con precaucion
-        FileUtils.ficherosRuta("C:\\Users\\user\\Desktop\\cosas mias\\ropita shein").forEach(System.out::println);;
+    	
+    	
+        FileUtils.ficherosRuta("C:\\Users\\user\\Desktop\\cosas mias\\ropita shein").forEach(System.out::println);
     }
 }

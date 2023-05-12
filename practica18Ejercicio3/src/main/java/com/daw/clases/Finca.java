@@ -12,9 +12,9 @@ import java.util.Objects;
 public class Finca {
 	private int id;
 	private String nombre;
-	private double longitud;
-	private double latitud;
-	private double superficie;
+	private Double longitud;
+	private Double latitud;
+	private Double superficie;
 	private String provincia;
 	private String localidad;
 	
@@ -65,7 +65,7 @@ public class Finca {
 	/**
 	 * @return the longitud
 	 */
-	public double getLongitud() {
+	public Double getLongitud() {
 		return longitud;
 	}
 	/**
@@ -77,7 +77,7 @@ public class Finca {
 	/**
 	 * @return the latitud
 	 */
-	public double getLatitud() {
+	public Double getLatitud() {
 		return latitud;
 	}
 	/**
@@ -89,7 +89,7 @@ public class Finca {
 	/**
 	 * @return the superficie
 	 */
-	public double getSuperficie() {
+	public Double getSuperficie() {
 		return superficie;
 	}
 	/**

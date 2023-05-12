@@ -7,10 +7,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -31,7 +34,10 @@ public class DAOLectura {
 		this.cargarDatos();
 	}
 	
-	private void cargarDatos() {
+	/**
+	 * Carga los datos del archivo lecturas.csv al set de lecturas
+	 */
+	public void cargarDatos() {
 		DAOFinca fincas = new DAOFinca();
 		Path ruta = Paths.get("./src/resources/lecturas.csv");
 		
@@ -51,5 +57,65 @@ public class DAOLectura {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * guarda las modificaciones de las lecturas al archivo .csv
+	 */
+	public void grabarDatos() {
+		
+		Path ruta = Paths.get("./src/resources/lecturas.csv");
+		
+		List<String> lecturasString = this.lecturas.stream()
+											.map( lectura -> {
+												StringBuilder sb = new StringBuilder();
+												
+												sb.append(lectura.getId());
+												sb.append(",");
+												sb.append(lectura.getTemperatura());
+												sb.append(",");
+												sb.append(lectura.getHumedad());
+												sb.append(",");
+												sb.append(lectura.getMomento());
+												sb.append(",");
+												sb.append(lectura.getFinca().getId());
+												
+												return sb.toString();
+											})
+											.sorted()
+											.collect(Collectors.toList());
+										
+		
+		try {
+			Files.write(ruta, lecturasString, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * añade una nueva lectura si no esta repetida
+	 * @param l
+	 */
+	public void addlectura(Lectura l) {
+		this.lecturas.add(l);
+	}
+	
+	/**
+	 * borra la lectura si esta en la lista de lecturas
+	 * @param l
+	 */
+	public void deleteLectura(Lectura l) {
+		this.lecturas.remove(l);
+	}
+	
+	//METODOS DE STREAMS
+	/*
+	public HashMap<Integer, List<Lectura>> getLecturasPorFinca() {
+		Map<Integer, List<Lectura>> lecturasPorFinca = this.lecturas.stream()
+															.collect(Collectors.groupingBy( )
+	}
+	*/
+	
 	
 }

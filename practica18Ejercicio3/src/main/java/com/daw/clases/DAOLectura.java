@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -49,7 +50,7 @@ public class DAOLectura {
 									return new Lectura(Integer.parseInt(datos[0]),//id
 											Double.parseDouble(datos[1]),// temperatura
 											Double.parseDouble(datos[2]),// humedad
-											LocalDate.parse(datos[3]),// momento
+											LocalDate.parse(datos[3],DateTimeFormatter.ofPattern("yyyy/MM/dd")),// momento
 											fincas.findById(Integer.parseInt(datos[4])));//finca
 								})
 								.collect(Collectors.toSet());
@@ -66,6 +67,7 @@ public class DAOLectura {
 		Path ruta = Paths.get("./src/resources/lecturas.csv");
 		
 		List<String> lecturasString = this.lecturas.stream()
+											.sorted((l1,l2) -> l1.getId() - l2.getId())
 											.map( lectura -> {
 												StringBuilder sb = new StringBuilder();
 												
@@ -75,16 +77,14 @@ public class DAOLectura {
 												sb.append(",");
 												sb.append(lectura.getHumedad());
 												sb.append(",");
-												sb.append(lectura.getMomento());
+												sb.append(lectura.getMomento().format(DateTimeFormatter.ofPattern("yyyy/MM/dd")));
 												sb.append(",");
 												sb.append(lectura.getFinca().getId());
 												
 												return sb.toString();
 											})
-											.sorted()
 											.collect(Collectors.toList());
 										
-		
 		try {
 			Files.write(ruta, lecturasString, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
 		} catch (IOException e) {
@@ -117,5 +117,63 @@ public class DAOLectura {
 	}
 	*/
 	
+	/**
+	 * devuelve la temperatura maxima de una finca o null si no encuentra
+	 * @param id
+	 * @return
+	 */
+	public Double getTempMaximaFinca(int id) {
+		return this.lecturas.stream()
+						.filter( lectura -> lectura.getFinca().getId() == id)
+						.map(Lectura::getTemperatura)
+						.reduce( (t1, t2) -> Math.max(t1, t2))
+						.orElse(null);
+	}
 	
+	/**
+	 * devuelve la temperatura minima de una finca o null si no encuentra
+	 * @param id
+	 * @return
+	 */
+	public Double getTempMinimaFinca(int id) {
+		return this.lecturas.stream()
+				.filter( lectura -> lectura.getFinca().getId() == id)
+				.map(Lectura::getTemperatura)
+				.reduce( (t1, t2) -> Math.min(t1, t2))
+				.orElse(null);
+	}
+	
+	/**
+	 * devuelve la lista de humedades ordenadas por fecha
+	 * @param id
+	 * @return
+	 */
+	public List<Double> getHumedadPorFinca(int id) {
+		return this.lecturas.stream()
+						.filter(lectura -> lectura.getFinca().getId() == id)
+						.sorted( (l1,l2) -> l1.getMomento().compareTo(l2.getMomento()))
+						.map(lectura -> lectura.getHumedad())
+						.collect(Collectors.toList());
+	}
+	
+	/**
+	 * devuelve la lista de temperaturas por finca ordenadas por fecha
+	 * @param id
+	 * @return
+	 */
+	public List<Double> getTemperaturaPorFinca(int id) {
+		return this.lecturas.stream()
+				.filter(lectura -> lectura.getFinca().getId() == id)
+				.sorted( (l1,l2) -> l1.getMomento().compareTo(l2.getMomento()))
+				.map(lectura -> lectura.getTemperatura())
+				.collect(Collectors.toList());
+	}
+	
+	public List<Double> getTempDiaPorFinca(int id, LocalDate dia) {
+		return this.lecturas.stream()
+						.filter(l -> l.getFinca().getId() == id)
+						.filter(l -> l.getMomento().equals(dia))
+						.map(l -> l.getTemperatura())
+						.collect(Collectors.toList());
+	}
 }

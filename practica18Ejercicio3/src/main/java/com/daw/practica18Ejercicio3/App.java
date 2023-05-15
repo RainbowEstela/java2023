@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 import com.daw.clases.DAOFinca;
 import com.daw.clases.DAOLectura;
+import com.daw.clases.Lectura;
 
 /**
  * Hello world!
@@ -16,10 +17,6 @@ public class App
     {
     	DAOFinca fincas = new DAOFinca();
     	DAOLectura lecturas = new DAOLectura();
-    	DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-    	LocalDate l = LocalDate.parse("2023/06/01",f);
-    	
-    	System.out.println(l);
     	
     	System.out.println("-------------------");
     	System.out.println("Fincas por superficie");
@@ -45,9 +42,12 @@ public class App
      	System.out.println("-------------------");
     	System.out.println("lecturas por finca");
     	System.out.println("-------------------");
-    	
-    	/* PREGUNTAR AL PROFESOR */
-    	
+    	/*
+    	lecturas.getLecturasPorFinca().forEach((k, v) -> {
+    		System.out.println(k + ":");
+    		v.forEach(System.out::println);
+    	});
+    	*/
      	System.out.println("-------------------");
     	System.out.println("temperatura maxima de una finca");
     	System.out.println("-------------------");
@@ -77,5 +77,14 @@ public class App
     	System.out.println("-------------------");
     	
     	lecturas.getTempDiaPorFinca(9, LocalDate.parse("2023-05-21")).forEach(System.out::println);
+    	
+    	//borrado de lecturas
+    	lecturas.deleteLectura(new Lectura(6, 0, 0, null, null));
+    	lecturas.deleteLectura(new Lectura(7, 0, 0, null, null));
+    	lecturas.deleteLectura(new Lectura(8, 0, 0, null, null));
+    	lecturas.deleteLectura(new Lectura(9, 0, 0, null, null));
+    	lecturas.deleteLectura(new Lectura(10, 0, 0, null, null));
+    	
+    	lecturas.grabarDatos();
     }
 }

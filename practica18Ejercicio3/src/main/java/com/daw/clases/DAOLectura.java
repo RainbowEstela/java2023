@@ -110,12 +110,13 @@ public class DAOLectura {
 	}
 	
 	//METODOS DE STREAMS
-	/*
+	
 	public HashMap<Integer, List<Lectura>> getLecturasPorFinca() {
 		Map<Integer, List<Lectura>> lecturasPorFinca = this.lecturas.stream()
-															.collect(Collectors.groupingBy( )
+															.collect(Collectors.groupingBy( l -> l.getFinca().getId() ));
+		return (HashMap<Integer, List<Lectura>>) lecturasPorFinca;
 	}
-	*/
+	
 	
 	/**
 	 * devuelve la temperatura maxima de una finca o null si no encuentra
